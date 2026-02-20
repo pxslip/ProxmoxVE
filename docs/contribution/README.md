@@ -47,7 +47,7 @@ cp docs/contribution/templates_install/AppName-install.sh install/myapp-install.
 
 # 7. Push to your fork and test via GitHub
 git push origin feature/my-awesome-app
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/ProxmoxVE/main/ct/myapp.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/ProxmoxVE/feature/my-awesome-app/ct/myapp.sh)"
 # ⏱️ GitHub may take 10-30 seconds to update files - be patient!
 
 # 8. Create your JSON metadata file
