@@ -4058,8 +4058,9 @@ EOF'
   # Disable error trap - container errors are handled internally via flag file
   set +Eeuo pipefail # Disable ALL error handling temporarily
   trap - ERR         # Remove ERR trap completely
-
-  lxc-attach -n "$CTID" -- bash -c "$(curl -fsSL "${SCRIPT_BASE}"/install/"${var_install}".sh)"
+  local installer="${SCRIPT_BASE}/install/${var_install}.sh"
+  echo "$installer" >> /tmp/my.log
+  lxc-attach -n "$CTID" -- bash -c "$(curl -fsSL "$installer")"
   local lxc_exit=$?
 
   set -Eeuo pipefail       # Re-enable error handling
